@@ -10,7 +10,11 @@
           <h1>{{title}}</h1>
  -->
         <div class="content">
-            <app-flight-search></app-flight-search>
+            <button
+                (click)="showSearch = !showSearch"
+                class="btn btn-default">Toggle show search</button>
+            <br><br>
+            <app-flight-search *ngIf="showSearch"></app-flight-search>
         </div>
   </div>
 
