@@ -16,7 +16,30 @@ export class FlightSearchComponent implements OnInit {
 
   get flights() {
     return this.flightService.flights;
-  }  
+  }
+
+  basket: object = {
+    "3": true,
+    "5": true
+  };
+
+  /* basket: {
+    items: object,
+    order: number[]
+  } = {
+    items: {
+      "3": true,
+      "5": true
+    },
+    order: [
+      5,
+      3
+    ]
+  }; */
+
+  /* get basketArr() {
+    return this.basket.order.map(i => this.basket.items[i]);
+  } */
 
   constructor(private flightService: FlightService) { }
 
