@@ -4,14 +4,39 @@
     </div>
 
     <div class="content">
-        <form>
+        <form #form="ngForm">
             <div class="form-group">
                 <label>From:</label>
                 <input
                     [(ngModel)]="from"
                     name="from"
-                    class="form-control">
+                    class="form-control"
+                    required
+                    minlength="3"
+                    maxlength="15"
+                    pattern="[a-zA-Z]*"
+                    [city]="[
+                        'Graz',
+                        'Wien'
+                    ]">
             </div>
+
+            <pre>{{
+              form?.controls['from']?.errors | json  
+            }}</pre>
+
+            <div
+                *ngIf="form?.controls['from']?.hasError('minlength')"
+                class="text-danger">
+                Eingabe zu kurz. Bitte min. 3 Zeichen eingeben.
+            </div>
+
+            <div
+                *ngIf="form?.controls['from']?.hasError('city')"
+                class="text-danger">
+                Dieser Städtename ist nicht erlaubt.
+            </div>
+            
             <div class="form-group">
                 <label>To:</label>
                 <input
