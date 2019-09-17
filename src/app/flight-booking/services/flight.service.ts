@@ -1,8 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { Flight } from '../entities/flight';
+import { Flight } from '../../entities/flight';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+
+export interface Person {
+  vorname: string;
+  nachname: string;
+}
+
+export const passenger: Person = {
+  vorname: 'Peter',
+  nachname: 'Huber',
+};
 
 @Injectable({
   providedIn: 'root'
