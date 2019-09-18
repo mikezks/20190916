@@ -1,0 +1,35 @@
+<form [formGroup]="form">
+    <div class="form-group">
+        <label>Id:</label>
+        <input formControlName="id" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label>Date:</label>
+        <input formControlName="date" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label>From:</label>
+        <input formControlName="from" class="form-control">
+    </div>
+
+    <pre>{{
+        form.controls['from'].errors | json
+    }}</pre>
+
+    <div class="form-group">
+        <label>To:</label>
+        <input formControlName="to" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <button 
+            (click)="save()"
+            [disabled]="form.invalid"
+            class="btn btn-default">Save</button>
+    </div>
+
+</form>
+
+<router-outlet></router-outlet>

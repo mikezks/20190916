@@ -47,7 +47,7 @@
         
             <div class="form-group">
                 <button
-                    [disabled]="!from || !to"
+                    [disabled]="form?.invalid"
                     (click)="search()"
                     class="btn btn-default">Search</button>
             </div>

@@ -10,11 +10,13 @@
           <h1>{{title}}</h1>
  -->
         <div class="content">
-            <button
+            <!-- <button
                 (click)="showSearch = !showSearch"
                 class="btn btn-default">Toggle show search</button>
-            <br><br>
-            <app-flight-search *ngIf="showSearch"></app-flight-search>
+            <br><br> -->
+            <!-- <app-flight-search *ngIf="showSearch"></app-flight-search> -->
+            <!-- <app-flight-edit></app-flight-edit> -->
+            <router-outlet></router-outlet>
         </div>
   </div>
 
