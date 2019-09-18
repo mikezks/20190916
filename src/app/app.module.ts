@@ -15,8 +15,7 @@ import { APP_ROUTES } from './app.routes';
    imports: [
       BrowserModule,
       HttpClientModule,
-      SharedModule,
-      
+      SharedModule,      
       RouterModule.forRoot(APP_ROUTES),
       FlightBookingModule,
    ],

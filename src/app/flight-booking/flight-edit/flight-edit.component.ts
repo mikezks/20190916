@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { validateCity, validateCityWithParams } from '../../shared/validators/city-validator';
+import { ActivatedRoute } from '@angular/router';
 
 const angularFormValidation = () => {
   const from = new FormControl();
@@ -25,10 +26,21 @@ const angularFormValidation = () => {
 })
 export class FlightEditComponent implements OnInit {
   form: FormGroup;
+  id: string;
+  showDetails: string;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(
+    private fb: FormBuilder,
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.params
+      .subscribe(
+        params => {
+          this.id = params['id'];
+          this.showDetails = params['showDetails'];
+        }
+      );
     this.form = this.fb.group({
       id: [1],
       from: ['Graz', [ 

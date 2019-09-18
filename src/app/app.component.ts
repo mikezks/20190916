@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'flight-app',
@@ -9,4 +10,8 @@ export class AppComponent  {
   title = 'Hello World!';
 
   showSearch = true;
+
+  constructor(private router: Router) {
+    console.log(this.router.config);
+  }
 }

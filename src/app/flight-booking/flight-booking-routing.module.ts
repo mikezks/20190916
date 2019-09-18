@@ -18,6 +18,10 @@ const routes: Routes = [
         component: FlightEditComponent
       },
       {
+        path: 'flight-edit/:id',
+        component: FlightEditComponent
+      },
+      {
         path: 'passenger-search',
         component: PassengerSearchComponent
       }
