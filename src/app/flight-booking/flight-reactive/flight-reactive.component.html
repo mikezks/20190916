@@ -1,0 +1,14 @@
+<ng-container *ngIf="{ 
+    timer10: timerTimesTen$ | async
+} as componentData">
+    <p>
+        Timer times 10: {{ componentData.timer10 }}
+        <br>
+        Timer times 10: {{ componentData.timer10 }}
+    </p>
+    <p>
+        <button
+            (click)="setState()"
+            class="btn btn-default">set State</button>
+    </p>
+</ng-container>

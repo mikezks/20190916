@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { FlightSearchComponent } from './flight-search/flight-search.component';
 import { FlightEditComponent } from './flight-edit/flight-edit.component';
 import { PassengerSearchComponent } from './passenger-search/passenger-search.component';
+import { FlightReactiveComponent } from './flight-reactive/flight-reactive.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,10 @@ const routes: Routes = [
       {
         path: 'flight-edit/:id',
         component: FlightEditComponent
+      },
+      {
+        path: 'flight-reactive',
+        component: FlightReactiveComponent
       },
       {
         path: 'passenger-search',
